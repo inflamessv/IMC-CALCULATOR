@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC App</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body onload="ocultadoBarras()">
+    <div class="container">
+        <h1>Calculadora IMC: Indice de masa corporal</h1>
+        </br>
+        <div class="mb-3">
+            <label for="peso" class="form-label">Ingrese Peso (kg):</label>
+            <input type="text" id="peso" name="peso" class="form-control" placeholder="Ingrese su peso">
+        </div>
+        <div class="mb-3">
+            <label for="altura" class="form-label">Ingrese Altura (m):</label>
+            <input type="text" id="altura" name="altura" class="form-control" placeholder="Ingrese su altura">
+        </div>
+        <div class="mb-3">
+            <button onclick="calcular()" class="btn btn-primary">Calcular</button>
+        </div>
+
+        <p>IMC: <span id="imc"></span></p>
+        <p>Lectura: <span id="lectura"></span></p>
+
+        <div class="progress" id="barra_pesoInferior">
+            <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25"
+                aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <div class="progress" id="barra_pesoNormal">
+            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                aria-valuemax="100"></div>
+        </div>
+        <div class="progress" id="barra_pesoSuperior">
+            <div class="progress-bar bg-warning" id="data_pesoSuperior" role="progressbar" style="width: 75%" aria-valuenow="75"
+                aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <div class="progress" id="barra_pesoObesidad">
+            <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100"
+                aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+    </div>
+    <script src="/imc.js" type="text/javascript"></script>
+</body>
+
+</html>
